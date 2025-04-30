@@ -310,3 +310,76 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+/* Abstract Section */
+.abstract-section {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.abstract-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--secondary-color), #4a90e2);
+}
+
+.abstract-section .title {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.abstract-section .content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+}
+
+.abstract-section p {
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.abstract-section p:last-child {
+  margin-bottom: 0;
+}
+
+.abstract-section .content strong {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* Add hover effect for the abstract section */
+.abstract-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments for abstract section */
+@media screen and (max-width: 768px) {
+  .abstract-section {
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .abstract-section .title {
+    font-size: 1.5rem;
+  }
+  
+  .abstract-section .content {
+    font-size: 1rem;
+  }
+}

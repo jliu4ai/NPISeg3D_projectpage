@@ -170,28 +170,21 @@
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Click-based interactive segmentation aims to segment target objects conditioned on user-provided clicks.
-            Existing methods typically interpret user intention by learning multiple click prompts to generate corresponding prompt-activated masks, and selecting one from these masks.
-            However, directly matching each prompt to the same visual feature often leads to homogeneous prompt-activated masks, as it pushes the click prompts to converge to one point. 
-          </p>
-          <p>
-            To address this problem, we propose Click Prompt Learning with Optimal Transport (CPlot), which leverages optimal transport theory to capture diverse user intentions with multiple click prompts. 
-            Specifically, we first introduce a prompt-pixel alignment module (PPAM), which aligns each click prompts with the visual features in the same feature space by plain transformer blocks. 
-            In such way, PPAM enables all click prompts to encode more general knowledge about regions of interest, indicating a consistent user intention.
-          </p>
-          <p>
-            To capture diverse user intentions, we further propose the click prompt optimal transport module (CPOT) to match click prompts and visual features.
-            CPOT is designed to learn an optimal mapping between click prompts and visual features. Such unique mapping facilities click prompts to effectively focus on distinct visual regions, which reflect underlying diverse user intentions.
-            Furthermore, CPlot learns click prompts with a two-stage optimization strategy: the inner loop optimizes the optimal transport distance to align visual features with click prompts through the Sinkhorn algorithm, while the outer loop adjusts the click prompts from the supervised data.
-          </p>
-          <p>
-            Extensive experiments on eight interactive segmentation benchmarks demonstrate the superiority of our method for interactive segmentation
-          </p>
+        <div class="abstract-section" data-aos="fade-up">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Interactive 3D segmentation has emerged as a promising solution for generating accurate object masks in complex 3D scenes by incorporating user-provided clicks. However, two critical challenges remain underexplored: (1) effectively generalizing from sparse user clicks to produce accurate segmentations and (2) quantifying predictive uncertainty to help users identify unreliable regions.
+            </p>
+            <p>
+              In this work, we propose <strong>NPISeg3D</strong>, a novel probabilistic framework that builds upon Neural Processes (NPs) to address these challenges. Specifically, NPISeg3D introduces a hierarchical latent variable structure with scene-specific and object-specific latent variables to enhance few-shot generalization by capturing both global context and object-specific characteristics.
+            </p>
+            <p>
+              Additionally, we design a probabilistic prototype modulator that adaptively modulates click prototypes with object-specific latent variables, improving the model's ability to capture object-aware context and quantify predictive uncertainty. Experiments on four 3D point cloud datasets demonstrate that NPISeg3D achieves superior segmentation performance with fewer clicks while providing reliable uncertainty estimations.
+            </p>
+          </div>
         </div>
       </div>
     </div>
