@@ -7,6 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Probabilistic Interactive 3D Segmentation with Hierarchical Neural Processes</title>
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
@@ -16,52 +25,13 @@
   <link rel="icon" href="./static/images/favicon.svg">
 
   <style>
-    body {
-      font-family: "Google Sans", sans-serif;
+    #custom-carousel-image {
+      transition: opacity 0.5s ease-in-out;
+      opacity: 1;
     }
 
-    .carousel-container {
-      position: relative;
-      overflow: hidden;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .carousel-slide {
-      min-width: 100%;
-      flex-shrink: 0;
-    }
-
-    .carousel-slide img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: contain;
-    }
-
-    .carousel-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0,0,0,0.5);
-      color: white;
-      border: none;
-      padding: 10px;
-      font-size: 24px;
-      cursor: pointer;
-      z-index: 1;
-    }
-
-    .carousel-button.prev {
-      left: 10px;
-    }
-
-    .carousel-button.next {
-      right: 10px;
+    #custom-carousel-image.fade-out {
+      opacity: 0;
     }
   </style>
 </head>
@@ -84,26 +54,95 @@
   </div>
 </nav>
 
-<!-- Hero -->
 <section class="hero is-fullheight">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Probabilistic Interactive 3D Segmentation with Hierarchical Neural Processes</h1>
-          <div class="is-size-5 publication-authors">
-            <span><a href="https://jliu4ai.github.io">Jie Liu</a><sup>1</sup>, </span>
-            <span><a href="https://panzhous.github.io/">Pan Zhou</a><sup>2</sup>, </span>
-            <span><a href="https://zzzx1224.github.io/">Zehao Xiao</a><sup>1</sup>, </span>
-            <span><a href="https://autumn9999.github.io/">Jiayi Shen</a><sup>1</sup>, </span>
-            <span><a href="https://ywzcode.github.io//">Wenzhe Yin</a><sup>1</sup>, </span>
-            <span><a href="https://www.nki.nl/research/research-groups/jan-jakob-sonke/">Jan-Jakob Sonke</a><sup>3</sup>, </span>
-            <span><a href="https://www.egavves.com/">Efstratios Gavves</a><sup>1</sup></span>
+          <h1 class="title is-1 publication-title" data-aos="fade-up">Probabilistic Interactive 3D Segmentation with Hierarchical Neural Processes</h1>
+          <div class="is-size-5 publication-authors" data-aos="fade-up" data-aos-delay="100">
+            <span class="author-block"><a href="https://jliu4ai.github.io">Jie Liu</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://panzhous.github.io/">Pan Zhou</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://zzzx1224.github.io/">Zehao Xiao</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://autumn9999.github.io/">Jiayi Shen</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://ywzcode.github.io//">Wenzhe Yin</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://www.nki.nl/research/research-groups/jan-jakob-sonke/">Jan-Jakob Sonke</a><sup>3</sup>,</span>
+            <span class="author-block"><a href="https://www.egavves.com/">Efstratios Gavves</a><sup>1</sup></span>
           </div>
           <div class="is-size-5 publication-authors">
-            <span><sup>1</sup>University of Amsterdam</span><br>
-            <span><sup>2</sup>Singapore Management University</span><br>
-            <span><sup>3</sup>Netherlands Cancer Institute</span>
+            <span class="author-block"><sup>1</sup>University of Amsterdam</span>
+            <span class="author-block"><sup>2</sup>Singapore Management University</span>
+            <span class="author-block"><sup>3</sup>Netherlands Cancer Institute</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links" data-aos="fade-up" data-aos-delay="200">
+              <a href="xxx" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+              </a>
+              <a href="xxx" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-youtube"></i></span>
+                <span>Video</span>
+              </a>
+              <a href="xxx" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-foot">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <a href="#abstract" class="scroll-down" data-aos="fade-up" data-aos-delay="300">
+            <span class="icon"><i class="fas fa-chevron-down"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/intro.jpg" class="interpolation-image" alt="Intro image" style="width: 100%; height: auto;"/>
+    </div>
+    <h2 class="content has-text-justified">
+      In this work, we propose <strong>Click Prompt learning with Optimal Transport (CPlot)</strong> for interactive segmentation. With the key component <strong>Click Prompt Optimal Transport (CPOT)</strong>, our model captures diverse user intentions, leading to more accurate mask prediction.
+    </h2>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="abstract-section" data-aos="fade-up">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>Interactive 3D segmentation has emerged as a promising solution for generating accurate object masks in complex 3D scenes by incorporating user-provided clicks. However, two critical challenges remain underexplored: (1) effectively <strong>generalizing from sparse user clicks</strong> to produce accurate segmentations and (2) <strong>quantifying predictive uncertainty</strong> to help users identify unreliable regions.</p>
+            <p>In this work, we propose <strong>NPISeg3D</strong>, a novel probabilistic framework that builds upon Neural Processes (NPs) to address these challenges. Specifically, NPISeg3D introduces a hierarchical latent variable structure with scene-specific and object-specific latent variables to enhance few-shot generalization by capturing both global context and object-specific characteristics.</p>
+            <p>Additionally, we design a probabilistic prototype modulator that adaptively modulates click prototypes with object-specific latent variables, improving the model's ability to capture object-aware context and quantify predictive uncertainty. Experiments on four 3D point cloud datasets demonstrate that NPISeg3D achieves superior segmentation performance with fewer clicks while providing reliable uncertainty estimations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Method -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="method-section" data-aos="fade-up">
+          <h2 class="title is-3 method-title">Method</h2>
+          <img src="./static/images/method.jpg" class="interpolation-image" alt="Method overview">
+          <div class="content has-text-justified">
+            <p>Framework of <strong>Click Prompt Learning with Optimal Transport (CPlot)</strong>. Given input image, click disk maps, and previous mask, the Image Encoder extracts visual features. The Click Encoder initializes click prompts with click coordinates. (a) <strong>The Prompt-Pixel Alignment Module</strong> aligns click prompts with the visual features. (b) <strong>Click Prompt Optimal Transport</strong> generates an optimized mask using an OT plan. A mask decoder fuses the features for final predictions.</p>
           </div>
         </div>
       </div>
@@ -111,46 +150,27 @@
   </div>
 </section>
 
-<!-- Intro Image -->
+<!-- Fade In/Out Carousel Section -->
 <section class="section">
-  <div class="container is-max-desktop">
-    <img src="./static/images/intro.jpg" alt="Intro" style="width: 100%;">
-  </div>
-</section>
-
-<!-- Abstract -->
-<section class="section" id="abstract">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">Abstract</h2>
-    <div class="content has-text-justified">
-      <p>Interactive 3D segmentation has emerged as a promising solution... (同你原文)</p>
-      <p>We propose <strong>NPISeg3D</strong>... (同你原文)</p>
-    </div>
-  </div>
-</section>
-
-<!-- Method -->
-<section class="section" id="method">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">Method</h2>
-    <img src="./static/images/method.jpg" alt="Method" style="width: 100%;">
-    <div class="content has-text-justified">
-      <p>Framework of <strong>Click Prompt Learning with Optimal Transport (CPlot)</strong>... (同你原文)</p>
-    </div>
-  </div>
-</section>
-
-<!-- Carousel -->
-<section class="section" id="results">
   <div class="container is-max-desktop has-text-centered">
     <h2 class="title is-3">Visualization Results</h2>
     <div class="carousel-container">
-      <div class="carousel-track" id="carousel-track">
-        <div class="carousel-slide"><img src="./static/images/vis_results/vis_1.png" alt="vis1"></div>
-        <div class="carousel-slide"><img src="./static/images/vis_results/vis_2.png" alt="vis2"></div>
-        <div class="carousel-slide"><img src="./static/images/vis_results/vis_3.png" alt="vis3"></div>
-        <div class="carousel-slide"><img src="./static/images/vis_results/vis_4.png" alt="vis4"></div>
-        <div class="carousel-slide"><img src="./static/images/vis_results/vis_5.png" alt="vis5"></div>
+      <div class="carousel-wrapper">
+        <div class="carousel-slide">
+          <img src="./static/images/vis_results/vis_1.png" alt="Visualization result 1">
+        </div>
+        <div class="carousel-slide">
+          <img src="./static/images/vis_results/vis_2.png" alt="Visualization result 2">
+        </div>
+        <div class="carousel-slide">
+          <img src="./static/images/vis_results/vis_3.png" alt="Visualization result 3">
+        </div>
+        <div class="carousel-slide">
+          <img src="./static/images/vis_results/vis_4.png" alt="Visualization result 4">
+        </div>
+        <div class="carousel-slide">
+          <img src="./static/images/vis_results/vis_5.png" alt="Visualization result 5">
+        </div>
       </div>
       <button class="carousel-button prev" onclick="moveSlide(-1)">❮</button>
       <button class="carousel-button next" onclick="moveSlide(1)">❯</button>
@@ -159,9 +179,9 @@
 </section>
 
 <!-- BibTeX -->
-<section class="section" id="bibtex">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">BibTeX</h2>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
     <pre><code>@article{jie2024click,
   author    = {Liu, Jie and Wang, Haochen and Yin, Wenzhe and Sonke, Jan-Jakob and Gavves, Efstratios},
   title     = {Click Prompt Learning with Optimal Transport for Interactive Segmentation},
@@ -171,26 +191,56 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
-  <div class="container has-text-centered">
-    <p>This website is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
-    <p>Based on <a href="https://github.com/nerfies/nerfies.github.io">nerfies.github.io</a>.</p>
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+          <p>It borrows the source code from <a href="https://github.com/nerfies/nerfies.github.io">this website</a>. We would like to thank Utkarsh Sinha and Keunhong Park.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
 
 <!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-  const track = document.getElementById("carousel-track");
-  const slides = document.querySelectorAll(".carousel-slide");
-  let currentIndex = 0;
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true
+  });
 
-  function moveSlide(direction) {
-    currentIndex = (currentIndex + direction + slides.length) % slides.length;
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
 
-  setInterval(() => moveSlide(1), 3000);
+  // Fade transition carousel
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = [
+      "./static/images/vis_results/vis_1.png",
+      "./static/images/vis_results/vis_2.png",
+      "./static/images/vis_results/vis_3.png",
+      "./static/images/vis_results/vis_4.png",
+      "./static/images/vis_results/vis_5.png"
+    ];
+    let currentIndex = 0;
+    const imgElement = document.getElementById("custom-carousel-image");
+
+    setInterval(() => {
+      imgElement.classList.add("fade-out");
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        imgElement.src = images[currentIndex];
+        imgElement.classList.remove("fade-out");
+      }, 500);
+    }, 3000);
+  });
 </script>
 
 </body>
