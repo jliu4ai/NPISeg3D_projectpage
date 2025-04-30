@@ -154,22 +154,26 @@
 <section class="section">
   <div class="container is-max-desktop has-text-centered">
     <h2 class="title is-3">Visualization Results</h2>
-    <div class="carousel" id="results-carousel">
-      <div class="item-1">
-        <img src="./static/images/vis_results/vis_1.png" alt="Visualization result 1">
+    <div class="carousel-container">
+      <div class="carousel-wrapper">
+        <div class="carousel-slide">
+          <img src="./static/images/vis_results/vis_1.png" alt="Visualization result 1">
+        </div>
+        <div class="carousel-slide">
+          <img src="./static/images/vis_results/vis_2.png" alt="Visualization result 2">
+        </div>
+        <div class="carousel-slide">
+          <img src="./static/images/vis_results/vis_3.png" alt="Visualization result 3">
+        </div>
+        <div class="carousel-slide">
+          <img src="./static/images/vis_results/vis_4.png" alt="Visualization result 4">
+        </div>
+        <div class="carousel-slide">
+          <img src="./static/images/vis_results/vis_5.png" alt="Visualization result 5">
+        </div>
       </div>
-      <div class="item-2">
-        <img src="./static/images/vis_results/vis_2.png" alt="Visualization result 2">
-      </div>
-      <div class="item-3">
-        <img src="./static/images/vis_results/vis_3.png" alt="Visualization result 3">
-      </div>
-      <div class="item-4">
-        <img src="./static/images/vis_results/vis_4.png" alt="Visualization result 4">
-      </div>
-      <div class="item-5">
-        <img src="./static/images/vis_results/vis_5.png" alt="Visualization result 5">
-      </div>
+      <button class="carousel-button prev" onclick="moveSlide(-1)">❮</button>
+      <button class="carousel-button next" onclick="moveSlide(1)">❯</button>
     </div>
   </div>
 </section>

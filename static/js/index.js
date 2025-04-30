@@ -29,17 +29,15 @@ $(document).ready(function() {
     });
 
     // Initialize carousel
-    var carousel = bulmaCarousel.attach('#results-carousel', {
-      slidesToScroll: 1,
-      slidesToShow: 1,
-      loop: true,
-      infinite: true,
-      autoplay: false,
-      navigation: true,
-      navigationKeys: true,
-      navigationSwipe: true,
-      pagination: true
-    });
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const wrapper = document.querySelector('.carousel-wrapper');
+    const totalSlides = slides.length;
+
+    window.moveSlide = function(direction) {
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+      wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+    };
 
     // Remove the old carousel code
     /*var player = document.getElementById('interpolation-video');
