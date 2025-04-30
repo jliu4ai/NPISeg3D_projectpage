@@ -2,8 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="description" content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Probabilistic Interactive 3D Segmentation with Hierarchical Neural Processes</title>
@@ -25,9 +24,16 @@
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <style>
+    #custom-carousel-image {
+      transition: opacity 0.5s ease-in-out;
+      opacity: 1;
+    }
+
+    #custom-carousel-image.fade-out {
+      opacity: 0;
+    }
+  </style>
 </head>
 <body>
 
@@ -144,7 +150,7 @@
   </div>
 </section>
 
-<!-- Pure JS Carousel Section -->
+<!-- Fade In/Out Carousel Section -->
 <section class="section">
   <div class="container is-max-desktop has-text-centered">
     <h2 class="title is-3">Visualization Results</h2>
@@ -183,25 +189,23 @@
   </div>
 </footer>
 
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-  // AOS animation
   AOS.init({
     duration: 800,
     easing: 'ease-in-out',
     once: true
   });
 
-  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
     });
   });
 
-  // Custom JS carousel
+  // Fade transition carousel
   document.addEventListener("DOMContentLoaded", function () {
     const images = [
       "./static/images/vis_results/vis_1.png",
@@ -214,8 +218,12 @@
     const imgElement = document.getElementById("custom-carousel-image");
 
     setInterval(() => {
-      currentIndex = (currentIndex + 1) % images.length;
-      imgElement.src = images[currentIndex];
+      imgElement.classList.add("fade-out");
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        imgElement.src = images[currentIndex];
+        imgElement.classList.remove("fade-out");
+      }, 500);
     }, 3000);
   });
 </script>
