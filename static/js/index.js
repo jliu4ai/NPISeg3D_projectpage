@@ -87,65 +87,34 @@ $(document).ready(function() {
       let currentIndex = 0;
       let autoScrollInterval;
       
-      // Clone first and last items for infinite scrolling
-      const firstClone = items[0].cloneNode(true);
-      const lastClone = items[items.length - 1].cloneNode(true);
+      function showSlide(index) {
+        // Remove active class from all items
+        items.forEach(item => item.classList.remove('active'));
+        
+        // Add active class to current item
+        items[index].classList.add('active');
+      }
       
-      carousel.appendChild(firstClone);
-      carousel.insertBefore(lastClone, items[0]);
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % items.length;
+        showSlide(currentIndex);
+      }
       
-      // Set initial position
-      currentIndex = 1;
-      updateCarousel();
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        showSlide(currentIndex);
+      }
       
       // Auto-scroll functionality
       function startAutoScroll() {
         if (autoScrollInterval) clearInterval(autoScrollInterval);
-        autoScrollInterval = setInterval(() => {
-          nextSlide();
-        }, 1000);
+        autoScrollInterval = setInterval(nextSlide, 1000);
       }
       
       function stopAutoScroll() {
         if (autoScrollInterval) {
           clearInterval(autoScrollInterval);
           autoScrollInterval = null;
-        }
-      }
-      
-      function nextSlide() {
-        currentIndex++;
-        updateCarousel();
-      }
-      
-      function prevSlide() {
-        currentIndex--;
-        updateCarousel();
-      }
-      
-      function updateCarousel() {
-        const offset = -currentIndex * 100;
-        carousel.style.transform = `translateX(${offset}%)`;
-        
-        // Reset position for infinite scrolling
-        if (currentIndex === items.length + 1) {
-          setTimeout(() => {
-            carousel.style.transition = 'none';
-            currentIndex = 1;
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-            setTimeout(() => {
-              carousel.style.transition = 'transform 0.5s ease-in-out';
-            }, 50);
-          }, 500);
-        } else if (currentIndex === 0) {
-          setTimeout(() => {
-            carousel.style.transition = 'none';
-            currentIndex = items.length;
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-            setTimeout(() => {
-              carousel.style.transition = 'transform 0.5s ease-in-out';
-            }, 50);
-          }, 500);
         }
       }
       
