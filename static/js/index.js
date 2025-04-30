@@ -82,6 +82,8 @@ $(document).ready(function() {
       const prevButton = document.querySelector('.carousel-control.prev');
       const nextButton = document.querySelector('.carousel-control.next');
       
+      if (!carouselTrack || !slides.length) return;
+      
       let currentIndex = 0;
       let slideCount = slides.length;
       let autoScrollInterval;
@@ -102,13 +104,17 @@ $(document).ready(function() {
       
       // Auto-scroll functionality
       function startAutoScroll() {
+        if (autoScrollInterval) clearInterval(autoScrollInterval);
         autoScrollInterval = setInterval(() => {
           nextSlide();
         }, 1000); // Change slide every 1 second
       }
       
       function stopAutoScroll() {
-        clearInterval(autoScrollInterval);
+        if (autoScrollInterval) {
+          clearInterval(autoScrollInterval);
+          autoScrollInterval = null;
+        }
       }
       
       function nextSlide() {
@@ -148,17 +154,21 @@ $(document).ready(function() {
       }
       
       // Event listeners
-      prevButton.addEventListener('click', () => {
-        stopAutoScroll();
-        prevSlide();
-        startAutoScroll();
-      });
+      if (prevButton) {
+        prevButton.addEventListener('click', () => {
+          stopAutoScroll();
+          prevSlide();
+          startAutoScroll();
+        });
+      }
       
-      nextButton.addEventListener('click', () => {
-        stopAutoScroll();
-        nextSlide();
-        startAutoScroll();
-      });
+      if (nextButton) {
+        nextButton.addEventListener('click', () => {
+          stopAutoScroll();
+          nextSlide();
+          startAutoScroll();
+        });
+      }
       
       // Start auto-scroll
       startAutoScroll();
