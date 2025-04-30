@@ -385,4 +385,61 @@ body {
 }
 
 /* Carousel Section */
-/* Removed carousel styles */
+.carousel {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carousel img {
+  max-height: 400px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.slider-container {
+  overflow: hidden;
+}
+
+.slider-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navigation arrows */
+.slider-navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.slider-navigation button {
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.slider-navigation button:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.slider-navigation button svg {
+  width: 20px;
+  height: 20px;
+  fill: #333;
+}
