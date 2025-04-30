@@ -12,26 +12,20 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
     function gtag() {
       dataLayer.push(arguments);
     }
-
     gtag('js', new Date());
-
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
@@ -70,25 +64,13 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title" data-aos="fade-up">Probabilistic Interactive 3D Segmentation with Hierarchical Neural Processes</h1>
           <div class="is-size-5 publication-authors" data-aos="fade-up" data-aos-delay="100">
-            <span class="author-block">
-              <a href="https://jliu4ai.github.io">Jie Liu</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://panzhous.github.io/">Pan Zhou</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://zzzx1224.github.io/">Zehao Xiao</a><sup>1</sup>,</span>
-            </span>
-            <span class="author-block">
-              <a href="https://autumn9999.github.io/">Jiayi Shen</a><sup>1</sup>,</span>
-            </span>
-            <span class="author-block">
-              <a href="https://ywzcode.github.io//">Wenzhe Yin</a><sup>1</sup>,</span>
-            </span>
-            <span class="author-block">
-              <a href="https://www.nki.nl/research/research-groups/jan-jakob-sonke/">Jan-Jakob Sonke</a><sup>3</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.egavves.com/">Efstratios Gavves</a><sup>1</sup>
-            </span>
+            <span class="author-block"><a href="https://jliu4ai.github.io">Jie Liu</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://panzhous.github.io/">Pan Zhou</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://zzzx1224.github.io/">Zehao Xiao</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://autumn9999.github.io/">Jiayi Shen</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://ywzcode.github.io//">Wenzhe Yin</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://www.nki.nl/research/research-groups/jan-jakob-sonke/">Jan-Jakob Sonke</a><sup>3</sup>,</span>
+            <span class="author-block"><a href="https://www.egavves.com/">Efstratios Gavves</a><sup>1</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -122,9 +104,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <a href="#abstract" class="scroll-down" data-aos="fade-up" data-aos-delay="300">
-            <span class="icon">
-              <i class="fas fa-chevron-down"></i>
-            </span>
+            <span class="icon"><i class="fas fa-chevron-down"></i></span>
           </a>
         </div>
       </div>
@@ -132,20 +112,14 @@
   </div>
 </section>
 
-
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/intro.jpg"
-      class="interpolation-image"
-      alt="Interpolate start reference image."
-      style="width: 100%; height: auto;"/>
-      </div>
-      <h2 class="content has-text-justified">
-        <span class="content has-text-justified">In this work, we propose <strong>Click Prompt learning with Optimal Transport (CPlot)</strong> for interactive segmentation. 
-           With the key component <strong>Click Prompt Optimal Transport (CPOT)</strong>, our model captures diverse user intentions, leading to more accurate mask prediction.
-      </h2>
+      <img src="./static/images/intro.jpg" class="interpolation-image" alt="Intro image" style="width: 100%; height: auto;"/>
     </div>
+    <h2 class="content has-text-justified">
+      <span class="content has-text-justified">In this work, we propose <strong>Click Prompt learning with Optimal Transport (CPlot)</strong> for interactive segmentation. With the key component <strong>Click Prompt Optimal Transport (CPOT)</strong>, our model captures diverse user intentions, leading to more accurate mask prediction.</span>
+    </h2>
   </div>
 </section>
 
@@ -157,15 +131,9 @@
         <div class="abstract-section" data-aos="fade-up">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            <p>
-              Interactive 3D segmentation has emerged as a promising solution for generating accurate object masks in complex 3D scenes by incorporating user-provided clicks. However, two critical challenges remain underexplored: (1) effectively <strong>generalizing from sparse user clicks</strong> to produce accurate segmentations and (2) <strong>quantifying predictive uncertainty</strong> to help users identify unreliable regions.
-            </p>
-            <p>
-              In this work, we propose <strong>NPISeg3D</strong>, a novel probabilistic framework that builds upon Neural Processes (NPs) to address these challenges. Specifically, NPISeg3D introduces a hierarchical latent variable structure with scene-specific and object-specific latent variables to enhance few-shot generalization by capturing both global context and object-specific characteristics.
-            </p>
-            <p>
-              Additionally, we design a probabilistic prototype modulator that adaptively modulates click prototypes with object-specific latent variables, improving the model's ability to capture object-aware context and quantify predictive uncertainty. Experiments on four 3D point cloud datasets demonstrate that NPISeg3D achieves superior segmentation performance with fewer clicks while providing reliable uncertainty estimations.
-            </p>
+            <p>Interactive 3D segmentation has emerged as a promising solution for generating accurate object masks in complex 3D scenes by incorporating user-provided clicks. However, two critical challenges remain underexplored: (1) effectively <strong>generalizing from sparse user clicks</strong> to produce accurate segmentations and (2) <strong>quantifying predictive uncertainty</strong> to help users identify unreliable regions.</p>
+            <p>In this work, we propose <strong>NPISeg3D</strong>, a novel probabilistic framework that builds upon Neural Processes (NPs) to address these challenges. Specifically, NPISeg3D introduces a hierarchical latent variable structure with scene-specific and object-specific latent variables to enhance few-shot generalization by capturing both global context and object-specific characteristics.</p>
+            <p>Additionally, we design a probabilistic prototype modulator that adaptively modulates click prototypes with object-specific latent variables, improving the model's ability to capture object-aware context and quantify predictive uncertainty. Experiments on four 3D point cloud datasets demonstrate that NPISeg3D achieves superior segmentation performance with fewer clicks while providing reliable uncertainty estimations.</p>
           </div>
         </div>
       </div>
@@ -178,9 +146,7 @@
           <h2 class="title is-3 method-title">Method</h2>
           <img src="./static/images/method.jpg" class="interpolation-image" alt="Method overview">
           <div class="content has-text-justified">
-            <p>
-              Framework of <strong>Click Prompt Learning with Optimal Transport (CPlot)</strong>. Given input image, click disk maps, and previous mask, the Image Encoder extracts visual features. The Click Encoder initializes click prompts with click coordinates. (a) <strong>The Prompt-Pixel Alignment Module</strong> aims to align click prompts with the visual features in the feature space. (b) <strong>Click Prompt Optimal Transport</strong> adopts optimal transport plan to generate optimized mask from vanilla prompt-activated mask. A lightweight mask decoder is used to implicitly analyze optimized prompt-activated mask with visual features and make mask predictions.
-            </p>
+            <p>Framework of <strong>Click Prompt Learning with Optimal Transport (CPlot)</strong>. Given input image, click disk maps, and previous mask, the Image Encoder extracts visual features. The Click Encoder initializes click prompts with click coordinates. (a) <strong>The Prompt-Pixel Alignment Module</strong> aims to align click prompts with the visual features in the feature space. (b) <strong>Click Prompt Optimal Transport</strong> adopts optimal transport plan to generate optimized mask from vanilla prompt-activated mask. A lightweight mask decoder is used to implicitly analyze optimized prompt-activated mask with visual features and make mask predictions.</p>
           </div>
         </div>
       </div>
@@ -188,7 +154,37 @@
   </div>
 </section>
 
-<!--/ citation. -->
+<!-- Carousel Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Visualization Results</h2>
+    <div class="carousel carousel-animated carousel-animate-slide" data-autoplay="true">
+      <div class="carousel-container">
+        <div class="carousel-item has-background is-active">
+          <img class="is-background" src="./static/images/vis_results/vis_1.png" alt="vis_1">
+        </div>
+        <div class="carousel-item has-background">
+          <img class="is-background" src="./static/images/vis_results/vis_2.png" alt="vis_2">
+        </div>
+        <div class="carousel-item has-background">
+          <img class="is-background" src="./static/images/vis_results/vis_3.png" alt="vis_3">
+        </div>
+        <div class="carousel-item has-background">
+          <img class="is-background" src="./static/images/vis_results/vis_4.png" alt="vis_4">
+        </div>
+        <div class="carousel-item has-background">
+          <img class="is-background" src="./static/images/vis_results/vis_5.png" alt="vis_5">
+        </div>
+      </div>
+      <div class="carousel-navigation is-overlay">
+        <div class="carousel-nav-left"><i class="fas fa-chevron-left"></i></div>
+        <div class="carousel-nav-right"><i class="fas fa-chevron-right"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
@@ -201,21 +197,13 @@
   </div>
 </section>
 
-
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            It borrows the source code from <a
-              href="https://github.com/nerfies/nerfies.github.io">this website</a>. We would like to thank Utkarsh Sinha and Keunhong Park.
-          </p>
+          <p>This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+          <p>It borrows the source code from <a href="https://github.com/nerfies/nerfies.github.io">this website</a>. We would like to thank Utkarsh Sinha and Keunhong Park.</p>
         </div>
       </div>
     </div>
@@ -223,14 +211,12 @@
 </footer>
 
 <script>
-  // Initialize AOS
   AOS.init({
     duration: 800,
     easing: 'ease-in-out',
     once: true
   });
 
-  // Smooth scroll for navigation
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -238,6 +224,15 @@
         behavior: 'smooth'
       });
     });
+  });
+
+  bulmaCarousel.attach('.carousel', {
+    slidesToScroll: 1,
+    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    infinite: true,
+    pauseOnHover: false,
   });
 </script>
 
