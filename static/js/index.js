@@ -76,68 +76,6 @@ $(document).ready(function() {
     bulmaSlider.attach();
 
     // Carousel functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const carousel = document.querySelector('.carousel');
-      const items = document.querySelectorAll('.carousel-item');
-      const prevButton = document.querySelector('.carousel-button.prev');
-      const nextButton = document.querySelector('.carousel-button.next');
-      
-      if (!carousel || !items.length) return;
-      
-      let currentIndex = 0;
-      let autoScrollInterval;
-      
-      function updateCarousel() {
-        const offset = -currentIndex * 100;
-        carousel.style.transform = `translateX(${offset}%)`;
-      }
-      
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % items.length;
-        updateCarousel();
-      }
-      
-      function prevSlide() {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
-        updateCarousel();
-      }
-      
-      // Auto-scroll functionality
-      function startAutoScroll() {
-        if (autoScrollInterval) clearInterval(autoScrollInterval);
-        autoScrollInterval = setInterval(nextSlide, 1000);
-      }
-      
-      function stopAutoScroll() {
-        if (autoScrollInterval) {
-          clearInterval(autoScrollInterval);
-          autoScrollInterval = null;
-        }
-      }
-      
-      // Event listeners
-      if (prevButton) {
-        prevButton.addEventListener('click', () => {
-          stopAutoScroll();
-          prevSlide();
-          startAutoScroll();
-        });
-      }
-      
-      if (nextButton) {
-        nextButton.addEventListener('click', () => {
-          stopAutoScroll();
-          nextSlide();
-          startAutoScroll();
-        });
-      }
-      
-      // Start auto-scroll
-      startAutoScroll();
-      
-      // Pause auto-scroll on hover
-      carousel.addEventListener('mouseenter', stopAutoScroll);
-      carousel.addEventListener('mouseleave', startAutoScroll);
-    });
+    /* Removed carousel JavaScript code */
 
 })
