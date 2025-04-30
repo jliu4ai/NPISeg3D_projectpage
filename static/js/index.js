@@ -29,37 +29,56 @@ $(document).ready(function() {
     });
 
     // Initialize carousel
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-slide');
-    const wrapper = document.querySelector('.carousel-wrapper');
-    const totalSlides = slides.length;
-    let autoPlayInterval;
+    function initCarousel() {
+      const slides = document.querySelectorAll('.carousel-slide');
+      const wrapper = document.querySelector('.carousel-wrapper');
+      const carouselContainer = document.querySelector('.carousel-container');
+      
+      if (!slides.length || !wrapper || !carouselContainer) {
+        console.error('Carousel elements not found');
+        return;
+      }
 
-    window.moveSlide = function(direction) {
-      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-      wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
-    };
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+      let autoPlayInterval;
 
-    // Auto play function
-    function startAutoPlay() {
-      autoPlayInterval = setInterval(() => {
-        moveSlide(1);
-      }, 3000); // Change slide every 3 seconds
+      // Move slide function
+      function moveSlide(direction) {
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+
+      // Auto play function
+      function startAutoPlay() {
+        if (autoPlayInterval) {
+          clearInterval(autoPlayInterval);
+        }
+        autoPlayInterval = setInterval(() => {
+          moveSlide(1);
+        }, 3000);
+      }
+
+      // Stop auto play when hovering over the carousel
+      carouselContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+      });
+
+      // Resume auto play when mouse leaves the carousel
+      carouselContainer.addEventListener('mouseleave', () => {
+        startAutoPlay();
+      });
+
+      // Add click handlers for navigation buttons
+      document.querySelector('.carousel-button.prev').addEventListener('click', () => moveSlide(-1));
+      document.querySelector('.carousel-button.next').addEventListener('click', () => moveSlide(1));
+
+      // Start auto play
+      startAutoPlay();
     }
 
-    // Stop auto play when hovering over the carousel
-    const carouselContainer = document.querySelector('.carousel-container');
-    carouselContainer.addEventListener('mouseenter', () => {
-      clearInterval(autoPlayInterval);
-    });
-
-    // Resume auto play when mouse leaves the carousel
-    carouselContainer.addEventListener('mouseleave', () => {
-      startAutoPlay();
-    });
-
-    // Start auto play
-    startAutoPlay();
+    // Initialize carousel after a short delay to ensure DOM is ready
+    setTimeout(initCarousel, 100);
 
     // Remove the old carousel code
     /*var player = document.getElementById('interpolation-video');
