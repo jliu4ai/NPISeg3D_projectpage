@@ -79,30 +79,27 @@ $(document).ready(function() {
     document.addEventListener('DOMContentLoaded', function() {
       const carousel = document.querySelector('.carousel');
       const items = document.querySelectorAll('.carousel-item');
-      const prevButton = document.querySelector('.carousel-nav-button.prev');
-      const nextButton = document.querySelector('.carousel-nav-button.next');
+      const prevButton = document.querySelector('.carousel-button.prev');
+      const nextButton = document.querySelector('.carousel-button.next');
       
       if (!carousel || !items.length) return;
       
       let currentIndex = 0;
       let autoScrollInterval;
       
-      function showSlide(index) {
-        // Remove active class from all items
-        items.forEach(item => item.classList.remove('active'));
-        
-        // Add active class to current item
-        items[index].classList.add('active');
+      function updateCarousel() {
+        const offset = -currentIndex * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
       }
       
       function nextSlide() {
         currentIndex = (currentIndex + 1) % items.length;
-        showSlide(currentIndex);
+        updateCarousel();
       }
       
       function prevSlide() {
         currentIndex = (currentIndex - 1 + items.length) % items.length;
-        showSlide(currentIndex);
+        updateCarousel();
       }
       
       // Auto-scroll functionality
