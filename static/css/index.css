@@ -403,22 +403,20 @@ body {
   margin: 1.5rem 0;
 }
 
-.carousel-track {
+.carousel {
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
-  position: relative;
 }
 
-.carousel-slide {
+.carousel-item {
   flex: 0 0 100%;
   min-width: 100%;
   padding: 0 1rem;
   box-sizing: border-box;
-  position: relative;
 }
 
-.carousel-slide img {
+.carousel-item img {
   width: 100%;
   height: auto;
   border-radius: var(--border-radius);
@@ -427,11 +425,11 @@ body {
   display: block;
 }
 
-.carousel-slide img:hover {
+.carousel-item img:hover {
   transform: scale(1.02);
 }
 
-.carousel-controls {
+.carousel-nav {
   position: absolute;
   top: 50%;
   left: 0;
@@ -443,7 +441,7 @@ body {
   z-index: 10;
 }
 
-.carousel-control {
+.carousel-nav-button {
   background-color: rgba(255, 255, 255, 0.9);
   border: none;
   border-radius: 50%;
@@ -458,24 +456,14 @@ body {
   color: var(--primary-color);
 }
 
-.carousel-control:hover {
+.carousel-nav-button:hover {
   background-color: var(--secondary-color);
   color: white;
   transform: scale(1.1);
 }
 
-.carousel-control:active {
+.carousel-nav-button:active {
   transform: scale(0.95);
-}
-
-/* Carousel Animation */
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
 }
 
 /* Responsive Design for Carousel */
@@ -484,7 +472,7 @@ body {
     padding: 1.5rem;
   }
   
-  .carousel-control {
+  .carousel-nav-button {
     width: 32px;
     height: 32px;
   }

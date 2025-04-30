@@ -77,26 +77,22 @@ $(document).ready(function() {
 
     // Carousel functionality
     document.addEventListener('DOMContentLoaded', function() {
-      const carouselTrack = document.querySelector('.carousel-track');
-      const slides = document.querySelectorAll('.carousel-slide');
-      const prevButton = document.querySelector('.carousel-control.prev');
-      const nextButton = document.querySelector('.carousel-control.next');
+      const carousel = document.querySelector('.carousel');
+      const items = document.querySelectorAll('.carousel-item');
+      const prevButton = document.querySelector('.carousel-nav-button.prev');
+      const nextButton = document.querySelector('.carousel-nav-button.next');
       
-      if (!carouselTrack || !slides.length) return;
+      if (!carousel || !items.length) return;
       
       let currentIndex = 0;
-      let slideCount = slides.length;
       let autoScrollInterval;
       
-      // Clone first and last slides for infinite scrolling
-      const firstClone = slides[0].cloneNode(true);
-      const lastClone = slides[slideCount - 1].cloneNode(true);
+      // Clone first and last items for infinite scrolling
+      const firstClone = items[0].cloneNode(true);
+      const lastClone = items[items.length - 1].cloneNode(true);
       
-      carouselTrack.appendChild(firstClone);
-      carouselTrack.insertBefore(lastClone, slides[0]);
-      
-      // Update slide count
-      slideCount += 2;
+      carousel.appendChild(firstClone);
+      carousel.insertBefore(lastClone, items[0]);
       
       // Set initial position
       currentIndex = 1;
@@ -107,7 +103,7 @@ $(document).ready(function() {
         if (autoScrollInterval) clearInterval(autoScrollInterval);
         autoScrollInterval = setInterval(() => {
           nextSlide();
-        }, 1000); // Change slide every 1 second
+        }, 1000);
       }
       
       function stopAutoScroll() {
@@ -118,36 +114,36 @@ $(document).ready(function() {
       }
       
       function nextSlide() {
-        currentIndex = (currentIndex + 1) % slideCount;
+        currentIndex++;
         updateCarousel();
       }
       
       function prevSlide() {
-        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+        currentIndex--;
         updateCarousel();
       }
       
       function updateCarousel() {
         const offset = -currentIndex * 100;
-        carouselTrack.style.transform = `translateX(${offset}%)`;
+        carousel.style.transform = `translateX(${offset}%)`;
         
         // Reset position for infinite scrolling
-        if (currentIndex === slideCount - 1) {
+        if (currentIndex === items.length + 1) {
           setTimeout(() => {
-            carouselTrack.style.transition = 'none';
+            carousel.style.transition = 'none';
             currentIndex = 1;
-            carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
             setTimeout(() => {
-              carouselTrack.style.transition = 'transform 0.5s ease-in-out';
+              carousel.style.transition = 'transform 0.5s ease-in-out';
             }, 50);
           }, 500);
         } else if (currentIndex === 0) {
           setTimeout(() => {
-            carouselTrack.style.transition = 'none';
-            currentIndex = slideCount - 2;
-            carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+            carousel.style.transition = 'none';
+            currentIndex = items.length;
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
             setTimeout(() => {
-              carouselTrack.style.transition = 'transform 0.5s ease-in-out';
+              carousel.style.transition = 'transform 0.5s ease-in-out';
             }, 50);
           }, 500);
         }
@@ -174,8 +170,8 @@ $(document).ready(function() {
       startAutoScroll();
       
       // Pause auto-scroll on hover
-      carouselTrack.addEventListener('mouseenter', stopAutoScroll);
-      carouselTrack.addEventListener('mouseleave', startAutoScroll);
+      carousel.addEventListener('mouseenter', stopAutoScroll);
+      carousel.addEventListener('mouseleave', startAutoScroll);
     });
 
 })
