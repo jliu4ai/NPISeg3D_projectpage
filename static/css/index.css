@@ -383,3 +383,105 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+/* Carousel Section */
+.carousel-section {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  margin: 2rem 0;
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  margin: 1.5rem 0;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.carousel-slide img:hover {
+  transform: scale(1.02);
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 10;
+}
+
+.carousel-control {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-control:hover {
+  background-color: var(--secondary-color);
+  color: white;
+  transform: scale(1.1);
+}
+
+.carousel-control:active {
+  transform: scale(0.95);
+}
+
+/* Carousel Animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Responsive Design for Carousel */
+@media screen and (max-width: 768px) {
+  .carousel-section {
+    padding: 1.5rem;
+  }
+  
+  .carousel-control {
+    width: 32px;
+    height: 32px;
+  }
+}

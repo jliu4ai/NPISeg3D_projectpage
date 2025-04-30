@@ -75,4 +75,97 @@ $(document).ready(function() {
 
     bulmaSlider.attach();
 
+    // Carousel functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const carouselTrack = document.querySelector('.carousel-track');
+      const slides = document.querySelectorAll('.carousel-slide');
+      const prevButton = document.querySelector('.carousel-control.prev');
+      const nextButton = document.querySelector('.carousel-control.next');
+      
+      let currentIndex = 0;
+      let slideCount = slides.length;
+      let autoScrollInterval;
+      
+      // Clone first and last slides for infinite scrolling
+      const firstClone = slides[0].cloneNode(true);
+      const lastClone = slides[slideCount - 1].cloneNode(true);
+      
+      carouselTrack.appendChild(firstClone);
+      carouselTrack.insertBefore(lastClone, slides[0]);
+      
+      // Update slide count
+      slideCount += 2;
+      
+      // Set initial position
+      currentIndex = 1;
+      updateCarousel();
+      
+      // Auto-scroll functionality
+      function startAutoScroll() {
+        autoScrollInterval = setInterval(() => {
+          nextSlide();
+        }, 1000); // Change slide every 1 second
+      }
+      
+      function stopAutoScroll() {
+        clearInterval(autoScrollInterval);
+      }
+      
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        updateCarousel();
+      }
+      
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+        updateCarousel();
+      }
+      
+      function updateCarousel() {
+        const offset = -currentIndex * 100;
+        carouselTrack.style.transform = `translateX(${offset}%)`;
+        
+        // Reset position for infinite scrolling
+        if (currentIndex === slideCount - 1) {
+          setTimeout(() => {
+            carouselTrack.style.transition = 'none';
+            currentIndex = 1;
+            carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+            setTimeout(() => {
+              carouselTrack.style.transition = 'transform 0.5s ease-in-out';
+            }, 50);
+          }, 500);
+        } else if (currentIndex === 0) {
+          setTimeout(() => {
+            carouselTrack.style.transition = 'none';
+            currentIndex = slideCount - 2;
+            carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+            setTimeout(() => {
+              carouselTrack.style.transition = 'transform 0.5s ease-in-out';
+            }, 50);
+          }, 500);
+        }
+      }
+      
+      // Event listeners
+      prevButton.addEventListener('click', () => {
+        stopAutoScroll();
+        prevSlide();
+        startAutoScroll();
+      });
+      
+      nextButton.addEventListener('click', () => {
+        stopAutoScroll();
+        nextSlide();
+        startAutoScroll();
+      });
+      
+      // Start auto-scroll
+      startAutoScroll();
+      
+      // Pause auto-scroll on hover
+      carouselTrack.addEventListener('mouseenter', stopAutoScroll);
+      carouselTrack.addEventListener('mouseleave', startAutoScroll);
+    });
+
 })
