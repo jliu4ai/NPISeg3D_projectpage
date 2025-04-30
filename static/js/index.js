@@ -33,11 +33,33 @@ $(document).ready(function() {
     const slides = document.querySelectorAll('.carousel-slide');
     const wrapper = document.querySelector('.carousel-wrapper');
     const totalSlides = slides.length;
+    let autoPlayInterval;
 
     window.moveSlide = function(direction) {
       currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
       wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
     };
+
+    // Auto play function
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(() => {
+        moveSlide(1);
+      }, 3000); // Change slide every 3 seconds
+    }
+
+    // Stop auto play when hovering over the carousel
+    const carouselContainer = document.querySelector('.carousel-container');
+    carouselContainer.addEventListener('mouseenter', () => {
+      clearInterval(autoPlayInterval);
+    });
+
+    // Resume auto play when mouse leaves the carousel
+    carouselContainer.addEventListener('mouseleave', () => {
+      startAutoPlay();
+    });
+
+    // Start auto play
+    startAutoPlay();
 
     // Remove the old carousel code
     /*var player = document.getElementById('interpolation-video');
