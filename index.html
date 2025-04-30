@@ -99,37 +99,19 @@
 
           <div class="column has-text-centered">
             <div class="publication-links" data-aos="fade-up" data-aos-delay="200">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="xxx"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="xxx"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="xxx"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
+              <a href="xxx" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+              </a>
+              <a href="xxx" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-youtube"></i></span>
+                <span>Video</span>
+              </a>
+              <a href="xxx" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
             </div>
-
           </div>
         </div>
       </div>
@@ -169,14 +151,14 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
+    <!-- Abstract -->
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <div class="abstract-section" data-aos="fade-up">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Interactive 3D segmentation has emerged as a promising solution for generating accurate object masks in complex 3D scenes by incorporating user-provided clicks. However, two critical challenges remain underexplored: (1) effectively generalizing from sparse user clicks to produce accurate segmentations and (2) quantifying predictive uncertainty to help users identify unreliable regions.
+              Interactive 3D segmentation has emerged as a promising solution for generating accurate object masks in complex 3D scenes by incorporating user-provided clicks. However, two critical challenges remain underexplored: (1) effectively <strong>generalizing from sparse user clicks</strong> to produce accurate segmentations and (2) <strong>quantifying predictive uncertainty</strong> to help users identify unreliable regions.
             </p>
             <p>
               In this work, we propose <strong>NPISeg3D</strong>, a novel probabilistic framework that builds upon Neural Processes (NPs) to address these challenges. Specifically, NPISeg3D introduces a hierarchical latent variable structure with scene-specific and object-specific latent variables to enhance few-shot generalization by capturing both global context and object-specific characteristics.
@@ -188,51 +170,36 @@
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
 
-    <!--/ Method. -->
-    <section class="hero teaser">
-      <div class="container is-max-desktop">
-        <div class="hero-header">
-          <h2 class="title is-3 has-text-centered method-title">Method</h2>
-        </div>
-        <div class="hero-body">
-          <img src="./static/images/method.jpg"
-          class="interpolation-image"
-          alt="Interpolate start reference image."
-          style="width: 100%; height: auto;"/>
+    <!-- Method -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="method-section" data-aos="fade-up">
+          <h2 class="title is-3 method-title">Method</h2>
+          <img src="./static/images/method.jpg" class="interpolation-image" alt="Method overview">
+          <div class="content has-text-justified">
+            <p>
+              Framework of <strong>Click Prompt Learning with Optimal Transport (CPlot)</strong>. Given input image, click disk maps, and previous mask, the Image Encoder extracts visual features. The Click Encoder initializes click prompts with click coordinates. (a) <strong>The Prompt-Pixel Alignment Module</strong> aims to align click prompts with the visual features in the feature space. (b) <strong>Click Prompt Optimal Transport</strong> adopts optimal transport plan to generate optimized mask from vanilla prompt-activated mask. A lightweight mask decoder is used to implicitly analyze optimized prompt-activated mask with visual features and make mask predictions.
+            </p>
           </div>
-          <h2 class="content has-text-justified">
-            <span class="content has-text-justified">Framework of <strong>Click Prompt Learning with Optimal Transport (CPlot)</strong>. Given input image, click disk maps, and previous mask, 
-              the Image Encoder extracts visual features. The Click Encoder initializes click prompts with click coordinates. (a) <strong>The Prompt-Pixel Alignment Module</strong> aims to align click prompts with the visual features in the feature space. 
-              (b) <strong>Click Prompt Optimal Transport</strong> adopts optimal transport plan to generate optimized mask from vanilla prompt-activated mask. A lightweight mask decoder is used to implicitly analyze optimized prompt-activated mask with visual features and make mask predictions.
-          </h2>
         </div>
       </div>
-    </section>
-    <!--/ Method. -->
+    </div>
 
-    <!--/ Visulization. -->
-    <section class="hero teaser">
-      <div class="container is-max-desktop">
-        <div class="hero-header">
-          <h2 class="title is-3 has-text-centered method-title">Intearctive Segmentation Examples</h2>
-          <p>
-          </p>
-        </div>
-        <div class="hero-body">
-          <img src="./static/images/vis.jpg"
-          class="interpolation-image"
-          alt="Interpolate start reference image."
-          style="width: 100%; height: auto;"/>
+    <!-- Results -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="method-section" data-aos="fade-up">
+          <h2 class="title is-3 method-title">Interactive Segmentation Examples</h2>
+          <img src="./static/images/vis.jpg" class="interpolation-image" alt="Visualization results">
+          <div class="content has-text-justified">
+            <p>
+              We show (a) a challenge case on the natural image, (b) a challenge case on the medical image, and (c) five normal cases. The segmentation probability maps are shown in golden; the segmentation maps are overlaid in red on the original images. Positive and negative clicks are marked with green and blue dots on the image, respectively.
+            </p>
           </div>
-          <h2 class="content has-text-justified">
-            <span class="content has-text-justified"> We show (a) a challenge case on the natural image, (b) a challenge case on the medical image, and (c) five normal cases. The segmentation probability maps are shown in golden; the segmentation maps are overlaid in red on the original images. Positive and negative clicks are marked with green and blue dots on the image, respectively.
-          </h2>
         </div>
       </div>
-    </section>
-      <!--/ Visualization. -->
+    </div>
   </div>
 </section>
 
