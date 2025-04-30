@@ -154,36 +154,40 @@
   </div>
 </section>
 
+
 <!-- Carousel Section -->
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Visualization Results</h2>
-    <div class="carousel carousel-animated carousel-animate-slide" data-autoplay="true" style="max-width: 400px; margin: 0 auto;">
+    <div id="carousel-demo" class="carousel carousel-animated carousel-animate-slide" style="max-width: 800px; margin: 0 auto;" data-autoplay="true">
       <div class="carousel-container">
         <div class="carousel-item has-background is-active">
-          <img src="./static/images/vis_results/vis_1.png" alt="vis_1" style="max-height: 200px; margin: 0 auto; display: block; object-fit: contain;">
+          <img class="is-background" src="./static/images/vis_results/vis_1.png" alt="vis_1" style="max-height: 400px; margin: 0 auto; object-fit: contain;">
         </div>
         <div class="carousel-item has-background">
-          <img src="./static/images/vis_results/vis_2.png" alt="vis_2" style="max-height: 200px; margin: 0 auto; display: block; object-fit: contain;">
+          <img class="is-background" src="./static/images/vis_results/vis_2.png" alt="vis_2" style="max-height: 400px; margin: 0 auto; object-fit: contain;">
         </div>
         <div class="carousel-item has-background">
-          <img src="./static/images/vis_results/vis_3.png" alt="vis_3" style="max-height: 200px; margin: 0 auto; display: block; object-fit: contain;">
+          <img class="is-background" src="./static/images/vis_results/vis_3.png" alt="vis_3" style="max-height: 400px; margin: 0 auto; object-fit: contain;">
         </div>
         <div class="carousel-item has-background">
-          <img src="./static/images/vis_results/vis_4.png" alt="vis_4" style="max-height: 200px; margin: 0 auto; display: block; object-fit: contain;">
+          <img class="is-background" src="./static/images/vis_results/vis_4.png" alt="vis_4" style="max-height: 400px; margin: 0 auto; object-fit: contain;">
         </div>
         <div class="carousel-item has-background">
-          <img src="./static/images/vis_results/vis_5.png" alt="vis_5" style="max-height: 200px; margin: 0 auto; display: block; object-fit: contain;">
+          <img class="is-background" src="./static/images/vis_results/vis_5.png" alt="vis_5" style="max-height: 400px; margin: 0 auto; object-fit: contain;">
         </div>
       </div>
       <div class="carousel-navigation is-overlay">
-        <div class="carousel-nav-left"><i class="fas fa-chevron-left"></i></div>
-        <div class="carousel-nav-right"><i class="fas fa-chevron-right"></i></div>
+        <div class="carousel-nav-left">
+          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-nav-right">
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
 
 
 <!-- BibTeX -->
@@ -213,28 +217,15 @@
 </footer>
 
 <script>
-  AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
-    once: true
-  });
-
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
+  document.addEventListener('DOMContentLoaded', () => {
+    bulmaCarousel.attach('#carousel-demo', {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      infinite: true,
+      pauseOnHover: false,
     });
-  });
-
-  bulmaCarousel.attach('.carousel', {
-    slidesToScroll: 1,
-    slidesToShow: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    infinite: true,
-    pauseOnHover: false,
   });
 </script>
 
