@@ -39,6 +39,60 @@ body {
   background-color: var(--light-gray);
 }
 
+/* Navbar Dropdown Styles */
+.navbar-dropdown {
+  border-top: 2px solid var(--primary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-dropdown .navbar-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.3s;
+}
+
+.navbar-dropdown .navbar-item:hover {
+  background-color: #f5f5f5;
+}
+
+.navbar-dropdown .icon {
+  margin-right: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-dropdown .ai-arxiv {
+  color: #b31b1b;
+}
+
+.navbar-dropdown .fa-file-pdf {
+  color: #e74c3c;
+}
+
+.navbar-link {
+  padding-right: 2.5em;
+}
+
+.navbar-link::after {
+  border-color: var(--primary-color);
+}
+
+/* Responsive styles for navbar dropdown */
+@media screen and (max-width: 1023px) {
+  .navbar-dropdown {
+    border-top: none;
+    box-shadow: none;
+  }
+  
+  .navbar-dropdown .navbar-item {
+    padding: 0.5rem 1rem;
+  }
+}
+
 /* Hero Section */
 .hero {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
