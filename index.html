@@ -275,13 +275,23 @@
   }
 
   function moveSlide(direction) {
+    const oldIndex = currentIndex;
     if (direction === 1) {
-      // When moving right
       currentIndex = (currentIndex + 1) % slides.length;
     } else {
-      // When moving left
       currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     }
+
+    // If we're going from last to first or first to last, disable transition temporarily
+    if ((oldIndex === slides.length - 1 && currentIndex === 0) || 
+        (oldIndex === 0 && currentIndex === slides.length - 1)) {
+      track.style.transition = 'none';
+      updateSlidePosition();
+      // Force a reflow
+      track.offsetHeight;
+      track.style.transition = 'transform 0.5s ease-in-out';
+    }
+    
     updateSlidePosition();
     resetAutoPlay();
   }
