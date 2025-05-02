@@ -275,15 +275,24 @@
   }
 
   function moveSlide(direction) {
-    if (direction === -1 && currentIndex === 0) {
-      // If at first slide and moving left, go to last slide
-      currentIndex = slides.length - 1;
-    } else if (direction === 1 && currentIndex === slides.length - 1) {
-      // If at last slide and moving right, go to first slide
-      currentIndex = 0;
+    if (direction === -1) {
+      // When moving left
+      if (currentIndex === 0) {
+        // If at first slide, go to last slide
+        currentIndex = slides.length - 1;
+      } else {
+        // Otherwise go to previous slide
+        currentIndex--;
+      }
     } else {
-      // Normal navigation
-      currentIndex = (currentIndex + direction) % slides.length;
+      // When moving right
+      if (currentIndex === slides.length - 1) {
+        // If at last slide, go to first slide
+        currentIndex = 0;
+      } else {
+        // Otherwise go to next slide
+        currentIndex++;
+      }
     }
     updateSlidePosition();
     resetAutoPlay();
