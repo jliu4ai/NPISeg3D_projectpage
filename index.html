@@ -121,10 +121,10 @@
 <section class="section" id="abstract" style="padding: 0.8rem 0;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-      <div class="column is-three-quarters">
-        <div class="method-section" data-aos="fade-up">
+      <div class="column is-two-thirds">
+        <div class="abstract-section" data-aos="fade-up">
           <h2 class="title is-3 has-text-centered" style="margin-bottom: 1.2rem; color: #2c3e50; font-weight: 500;">Abstract</h2>
-          <div class="custom-content" style="background-color: #ffffff; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+          <div class="custom-content" style="background-color: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
             <p style="font-size: 1rem; line-height: 1.5; color: #34495e; text-align: justify;">
               Interactive 3D segmentation has emerged as a promising solution for generating accurate object masks in complex 3D scenes by incorporating user-provided clicks. However, two critical challenges remain underexplored: (1) effectively <strong>generalizing from sparse user clicks</strong> to produce accurate segmentations and (2) <strong>quantifying predictive uncertainty</strong> to help users identify unreliable regions. 
             </p>
@@ -145,13 +145,13 @@
 <section class="section" id="method" style="padding: 0.8rem 0;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-      <div class="column is-three-quarters">
+      <div class="column is-two-thirds">
         <div class="method-section" data-aos="fade-up">
           <h2 class="title is-3 has-text-centered" style="margin-bottom: 1.2rem; color: #2c3e50; font-weight: 500;">Method</h2>
           <div class="content has-text-centered" style="margin-bottom: 1.2rem;">
             <img src="./static/images/method.jpg" class="interpolation-image" alt="Method overview" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
           </div>
-          <div class="custom-content" style="background-color: #ffffff; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+          <div class="custom-content" style="background-color: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
             <p style="font-size: 1rem; line-height: 1.5; color: #34495e; text-align: justify;">
               <strong>Framework of NPISeg3D.</strong> We formulate interactive 3D segmentation as a probabilistic modeling problem with neural processes. Given a 3D scene \(S\) and a user click set \(\mathcal{C}\), a point encoder encodes them into click prototypes \(\mathbf{X}_C\) (context data) and scene features \(\mathbf{X}_T\) (target data). Then, we introduce two hierarchical latent variables: scene-level latent variable \(\mathbf{z}_s\) and object-level latent variable \(\mathbf{z}_o\), to enable probabilistic modeling and capture contextual information across hierarchical levels. In probabilistic prototype modulator, each object-specific latent variable is utilized to generate object-specific weights \((\gamma, \beta)\), which modulate its corresponding click prototypes, thereby enhancing few-shot generalization and providing reliable uncertainty estimation. The posterior distributions of the latent variables are inferred from the target set \((\mathbf{X}_T,\mathbf{Y}_T)\), which supervise the prior during training.
             </p>
@@ -345,7 +345,7 @@
 <style>
   .custom-content {
     background-color: #ffffff;
-    padding: 1.2rem;
+    padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   }
