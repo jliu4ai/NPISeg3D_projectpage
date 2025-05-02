@@ -110,28 +110,15 @@
     <div class="hero-body" style="padding: 0;">
       <img src="./static/images/intro.jpg" class="interpolation-image" alt="Intro image" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);"/>
     </div>
-    <h2 class="content has-text-justified" style="margin-top: 2rem; font-size: 1.1rem; line-height: 1.8;">
+    <h2 class="content has-text-justified" style="margin-top: 1.2rem; font-size: 1.1rem; line-height: 1.5;">
       In this work, we propose <strong>Click Prompt learning with Optimal Transport (CPlot)</strong> for interactive segmentation. With the key component <strong>Click Prompt Optimal Transport (CPOT)</strong>, our model captures diverse user intentions, leading to more accurate mask prediction.
     </h2>
   </div>
 </section>
 
-<section class="section" id="abstract" style="padding: 0.8rem 0;">
+<section class="section" id="method" style="padding: 0.8rem 0;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <div class="abstract-section" data-aos="fade-up">
-          <h2 class="title is-3 has-text-centered" style="margin-bottom: 1.2rem; color: #2c3e50; font-weight: 500;">Abstract</h2>
-          <div class="custom-content" style="background-color: #ffffff; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-            <p style="font-size: 1.1rem; line-height: 1.5; color: #34495e; margin-bottom: 0.8rem;">Interactive 3D segmentation has emerged as a promising solution for generating accurate object masks in complex 3D scenes by incorporating user-provided clicks. However, two critical challenges remain underexplored: (1) effectively <strong>generalizing from sparse user clicks</strong> to produce accurate segmentations and (2) <strong>quantifying predictive uncertainty</strong> to help users identify unreliable regions.</p>
-            <p style="font-size: 1.1rem; line-height: 1.5; color: #34495e; margin-bottom: 0.8rem;">In this work, we propose <strong>NPISeg3D</strong>, a novel probabilistic framework that builds upon Neural Processes (NPs) to address these challenges. Specifically, NPISeg3D introduces a hierarchical latent variable structure with scene-specific and object-specific latent variables to enhance few-shot generalization by capturing both global context and object-specific characteristics.</p>
-            <p style="font-size: 1.1rem; line-height: 1.5; color: #34495e;">Additionally, we design a probabilistic prototype modulator that adaptively modulates click prototypes with object-specific latent variables, improving the model's ability to capture object-aware context and quantify predictive uncertainty. Experiments on four 3D point cloud datasets demonstrate that NPISeg3D achieves superior segmentation performance with fewer clicks while providing reliable uncertainty estimations.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-centered" id="method" style="margin-top: 1.2rem;">
       <div class="column is-four-fifths">
         <div class="method-section" data-aos="fade-up">
           <h2 class="title is-3 has-text-centered" style="margin-bottom: 1.2rem; color: #2c3e50; font-weight: 500;">Method</h2>
