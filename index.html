@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -150,7 +152,9 @@
             <img src="./static/images/method.jpg" class="interpolation-image" alt="Method overview" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
           </div>
           <div class="custom-content" style="background-color: #ffffff; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-            <p style="font-size: 1.1rem; line-height: 1.5; color: #34495e;">Framework of <strong>Click Prompt Learning with Optimal Transport (CPlot)</strong>. Given input image, click disk maps, and previous mask, the Image Encoder extracts visual features. The Click Encoder initializes click prompts with click coordinates. (a) <strong>The Prompt-Pixel Alignment Module</strong> aligns click prompts with the visual features. (b) <strong>Click Prompt Optimal Transport</strong> generates an optimized mask using an OT plan. A mask decoder fuses the features for final predictions.</p>
+            <p style="font-size: 1.1rem; line-height: 1.5; color: #34495e;">
+              <strong>Framework of NPISeg3D.</strong> We formulate interactive 3D segmentation as a probabilistic modeling problem with neural processes. Given a 3D scene \(S\) and a user click set \(\mathcal{C}\), a point encoder encodes them into click prototypes \(\mathbf{X}_C\) (context data) and scene features \(\mathbf{X}_T\) (target data). Then, we introduce two hierarchical latent variables: scene-level latent variable \(\mathbf{z}_s\) and object-level latent variable \(\mathbf{z}_o\), to enable probabilistic modeling and capture contextual information across hierarchical levels. In probabilistic prototype modulator, each object-specific latent variable is utilized to generate object-specific weights \((\gamma, \beta)\), which modulate its corresponding click prototypes, thereby enhancing few-shot generalization and providing reliable uncertainty estimation. The posterior distributions of the latent variables are inferred from the target set \((\mathbf{X}_T,\mathbf{Y}_T)\), which supervise the prior during training.
+            </p>
           </div>
         </div>
       </div>
