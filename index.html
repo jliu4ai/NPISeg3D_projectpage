@@ -147,6 +147,8 @@
   </div>
 </section>
 
+
+
 <section class="section" id="results">
   <div class="container is-max-desktop has-text-centered">
     <h2 class="title is-3">Qualitative Results</h2>
@@ -158,29 +160,31 @@
       </p>
     </div>
 
-    <div class="carousel-container" style="position: relative; overflow: hidden; width: 100%; max-width: 600px; margin: 2rem auto;">
-      <div class="carousel-track" style="display: flex; transition: transform 0.5s ease;">
-        <img class="carousel-slide"
-             src="./static/images/vis_results/vis_1.png"
-             style="max-width: 100%; height: auto; flex-shrink: 0;"
-             alt="Qualitative result 1">
-        <img class="carousel-slide"
-             src="./static/images/vis_results/vis_2.png"
-             style="max-width: 100%; height: auto; flex-shrink: 0;"
-             alt="Qualitative result 2">
-        <img class="carousel-slide"
-             src="./static/images/vis_results/vis_3.png"
-             style="max-width: 100%; height: auto; flex-shrink: 0;"
-             alt="Qualitative result 3">
-        <img class="carousel-slide"
-             src="./static/images/vis_results/vis_4.png"
-             style="max-width: 100%; height: auto; flex-shrink: 0;"
-             alt="Qualitative result 4">
-        <img class="carousel-slide"
-             src="./static/images/vis_results/vis_5.png"
-             style="max-width: 100%; height: auto; flex-shrink: 0;"
-             alt="Qualitative result 5">
+    <div class="carousel-container" style="position: relative; overflow: hidden; width: 100%; max-width: 700px; margin: 2rem auto; height: 400px;">
+      <div class="carousel-track" style="display: flex; transition: transform 0.5s ease; height: 100%;">
+        <!-- Each slide -->
+        <div class="carousel-slide" style="flex: 0 0 100%; display: flex; justify-content: center; align-items: center; height: 100%;">
+          <img src="./static/images/vis_results/vis_1.png" alt="Qualitative result 1"
+               style="max-width: 90%; max-height: 90%; object-fit: contain;">
+        </div>
+        <div class="carousel-slide" style="flex: 0 0 100%; display: flex; justify-content: center; align-items: center; height: 100%;">
+          <img src="./static/images/vis_results/vis_2.png" alt="Qualitative result 2"
+               style="max-width: 90%; max-height: 90%; object-fit: contain;">
+        </div>
+        <div class="carousel-slide" style="flex: 0 0 100%; display: flex; justify-content: center; align-items: center; height: 100%;">
+          <img src="./static/images/vis_results/vis_3.png" alt="Qualitative result 3"
+               style="max-width: 90%; max-height: 90%; object-fit: contain;">
+        </div>
+        <div class="carousel-slide" style="flex: 0 0 100%; display: flex; justify-content: center; align-items: center; height: 100%;">
+          <img src="./static/images/vis_results/vis_4.png" alt="Qualitative result 4"
+               style="max-width: 90%; max-height: 90%; object-fit: contain;">
+        </div>
+        <div class="carousel-slide" style="flex: 0 0 100%; display: flex; justify-content: center; align-items: center; height: 100%;">
+          <img src="./static/images/vis_results/vis_5.png" alt="Qualitative result 5"
+               style="max-width: 90%; max-height: 90%; object-fit: contain;">
+        </div>
       </div>
+
       <button class="carousel-button prev" onclick="moveSlide(-1)"
               style="position:absolute; top:50%; left:10px; transform:translateY(-50%); background: rgba(0,0,0,0.5); border: none; color: white; font-size: 2rem; padding: 0 10px; cursor: pointer;">❮</button>
       <button class="carousel-button next" onclick="moveSlide(1)"
@@ -188,6 +192,11 @@
     </div>
   </div>
 </section>
+
+
+
+
+
 
 <section class="section" id="bibtex">
   <div class="container is-max-desktop content">
