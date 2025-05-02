@@ -56,7 +56,7 @@
   </div>
 </nav>
 
-<section class="hero is-fullheight" style="min-height: 60vh;">
+<section class="hero is-fullheight" style="min-height: 50vh;">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -105,7 +105,7 @@
   </div>
 </section>
 
-<section class="hero teaser" style="padding: 1.5rem 0;">
+<section class="hero teaser" style="padding: 1rem 0;">
   <div class="container is-max-desktop">
     <div class="hero-body" style="padding: 0;">
       <img src="./static/images/intro.jpg" class="interpolation-image" alt="Intro image" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);"/>
@@ -116,30 +116,30 @@
   </div>
 </section>
 
-<section class="section" id="abstract" style="padding: 1.5rem 0;">
+<section class="section" id="abstract" style="padding: 1rem 0;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <div class="abstract-section" data-aos="fade-up">
-          <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem; color: #2c3e50; font-weight: 500;">Abstract</h2>
-          <div class="content has-text-justified" style="background-color: #ffffff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: none;">
-            <p style="font-size: 1.1rem; line-height: 1.8; color: #34495e; margin-bottom: 1.2rem;">Interactive 3D segmentation has emerged as a promising solution for generating accurate object masks in complex 3D scenes by incorporating user-provided clicks. However, two critical challenges remain underexplored: (1) effectively <strong>generalizing from sparse user clicks</strong> to produce accurate segmentations and (2) <strong>quantifying predictive uncertainty</strong> to help users identify unreliable regions.</p>
-            <p style="font-size: 1.1rem; line-height: 1.8; color: #34495e; margin-bottom: 1.2rem;">In this work, we propose <strong>NPISeg3D</strong>, a novel probabilistic framework that builds upon Neural Processes (NPs) to address these challenges. Specifically, NPISeg3D introduces a hierarchical latent variable structure with scene-specific and object-specific latent variables to enhance few-shot generalization by capturing both global context and object-specific characteristics.</p>
-            <p style="font-size: 1.1rem; line-height: 1.8; color: #34495e;">Additionally, we design a probabilistic prototype modulator that adaptively modulates click prototypes with object-specific latent variables, improving the model's ability to capture object-aware context and quantify predictive uncertainty. Experiments on four 3D point cloud datasets demonstrate that NPISeg3D achieves superior segmentation performance with fewer clicks while providing reliable uncertainty estimations.</p>
+          <h2 class="title is-3 has-text-centered" style="margin-bottom: 1.5rem; color: #2c3e50; font-weight: 500;">Abstract</h2>
+          <div class="content has-text-justified" style="background-color: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #34495e; margin-bottom: 1rem;">Interactive 3D segmentation has emerged as a promising solution for generating accurate object masks in complex 3D scenes by incorporating user-provided clicks. However, two critical challenges remain underexplored: (1) effectively <strong>generalizing from sparse user clicks</strong> to produce accurate segmentations and (2) <strong>quantifying predictive uncertainty</strong> to help users identify unreliable regions.</p>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #34495e; margin-bottom: 1rem;">In this work, we propose <strong>NPISeg3D</strong>, a novel probabilistic framework that builds upon Neural Processes (NPs) to address these challenges. Specifically, NPISeg3D introduces a hierarchical latent variable structure with scene-specific and object-specific latent variables to enhance few-shot generalization by capturing both global context and object-specific characteristics.</p>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #34495e;">Additionally, we design a probabilistic prototype modulator that adaptively modulates click prototypes with object-specific latent variables, improving the model's ability to capture object-aware context and quantify predictive uncertainty. Experiments on four 3D point cloud datasets demonstrate that NPISeg3D achieves superior segmentation performance with fewer clicks while providing reliable uncertainty estimations.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="columns is-centered" id="method" style="margin-top: 2rem;">
+    <div class="columns is-centered" id="method" style="margin-top: 1.5rem;">
       <div class="column is-four-fifths">
         <div class="method-section" data-aos="fade-up">
-          <h2 class="title is-3 has-text-centered" style="margin-bottom: 2rem; color: #2c3e50; font-weight: 500;">Method</h2>
-          <div class="content has-text-centered" style="margin-bottom: 2rem;">
+          <h2 class="title is-3 has-text-centered" style="margin-bottom: 1.5rem; color: #2c3e50; font-weight: 500;">Method</h2>
+          <div class="content has-text-centered" style="margin-bottom: 1.5rem;">
             <img src="./static/images/method.jpg" class="interpolation-image" alt="Method overview" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
           </div>
-          <div class="content has-text-justified" style="background-color: #ffffff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-            <p style="font-size: 1.1rem; line-height: 1.8; color: #34495e;">Framework of <strong>Click Prompt Learning with Optimal Transport (CPlot)</strong>. Given input image, click disk maps, and previous mask, the Image Encoder extracts visual features. The Click Encoder initializes click prompts with click coordinates. (a) <strong>The Prompt-Pixel Alignment Module</strong> aligns click prompts with the visual features. (b) <strong>Click Prompt Optimal Transport</strong> generates an optimized mask using an OT plan. A mask decoder fuses the features for final predictions.</p>
+          <div class="content has-text-justified" style="background-color: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #34495e;">Framework of <strong>Click Prompt Learning with Optimal Transport (CPlot)</strong>. Given input image, click disk maps, and previous mask, the Image Encoder extracts visual features. The Click Encoder initializes click prompts with click coordinates. (a) <strong>The Prompt-Pixel Alignment Module</strong> aligns click prompts with the visual features. (b) <strong>Click Prompt Optimal Transport</strong> generates an optimized mask using an OT plan. A mask decoder fuses the features for final predictions.</p>
           </div>
         </div>
       </div>
@@ -147,7 +147,7 @@
   </div>
 </section>
 
-<section class="section" id="results" style="padding: 1.5rem 0;">
+<section class="section" id="results" style="padding: 1rem 0;">
   <div class="container is-max-desktop has-text-centered">
     <h2 class="title is-3" style="margin-bottom: 1rem;">Qualitative Results</h2>
     <div class="content has-text-justified" style="margin-bottom: 1rem;">
@@ -326,6 +326,12 @@
 
   window.addEventListener('resize', updateSlidePosition);
 </script>
+
+<style>
+  .content.has-text-justified {
+    border-left: none !important;
+  }
+</style>
 
 </body>
 </html>
