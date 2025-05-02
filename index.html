@@ -185,12 +185,16 @@
 
       <!-- Navigation buttons -->
       <button class="carousel-button prev" onclick="moveSlide(-1)"
-              style="position:absolute; top:50%; left:20px; transform:translateY(-50%); background: rgba(0,0,0,0.6); border: none; color: white; width: 40px; height: 40px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center;">
-        <span style="transform: translateX(-1px);">❮</span>
+              style="position:absolute; top:50%; left:20px; transform:translateY(-50%); background: rgba(0,0,0,0.6); border: none; color: white; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; z-index: 10;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
       </button>
       <button class="carousel-button next" onclick="moveSlide(1)"
-              style="position:absolute; top:50%; right:20px; transform:translateY(-50%); background: rgba(0,0,0,0.6); border: none; color: white; width: 40px; height: 40px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center;">
-        <span style="transform: translateX(1px);">❯</span>
+              style="position:absolute; top:50%; right:20px; transform:translateY(-50%); background: rgba(0,0,0,0.6); border: none; color: white; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; z-index: 10;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
       </button>
 
       <!-- Indicators -->
@@ -294,10 +298,12 @@
     button.addEventListener('mouseenter', () => {
       button.style.background = 'rgba(0,0,0,0.8)';
       button.style.transform = `translateY(-50%) scale(1.1)`;
+      button.style.boxShadow = '0 2px 8px rgba(0,0,0,0.2)';
     });
     button.addEventListener('mouseleave', () => {
       button.style.background = 'rgba(0,0,0,0.6)';
       button.style.transform = 'translateY(-50%) scale(1)';
+      button.style.boxShadow = 'none';
     });
   });
 
