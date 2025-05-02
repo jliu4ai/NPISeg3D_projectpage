@@ -125,14 +125,14 @@
         <div class="method-section" data-aos="fade-up">
           <h2 class="title is-3 has-text-centered" style="margin-bottom: 1.2rem; color: #2c3e50; font-weight: 500;">Abstract</h2>
           <div class="custom-content" style="background-color: #ffffff; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-            <p style="font-size: 1.1rem; line-height: 1.5; color: #34495e;">
+            <p style="font-size: 1rem; line-height: 1.5; color: #34495e; text-align: justify;">
               Interactive 3D segmentation has emerged as a promising solution for generating accurate object masks in complex 3D scenes by incorporating user-provided clicks. However, two critical challenges remain underexplored: (1) effectively <strong>generalizing from sparse user clicks</strong> to produce accurate segmentations and (2) <strong>quantifying predictive uncertainty</strong> to help users identify unreliable regions. 
             </p>
-            <p style="font-size: 1.1rem; line-height: 1.5; color: #34495e; margin-top: 1rem;">
+            <p style="font-size: 1rem; line-height: 1.5; color: #34495e; margin-top: 1rem; text-align: justify;">
               In this work, we propose <strong>NPISeg3D, a novel probabilistic framework that builds upon Neural Processes (NPs)</strong> to address these challenges.
               Specifically, NPISeg3D introduces a hierarchical latent variable structure with scene-specific and object-specific latent variables to enhance few-shot generalization by capturing both global context and object-specific characteristics. Additionally, we design a probabilistic prototype modulator that adaptively modulates click prototypes with object-specific latent variables, improving the model's ability to capture object-aware context and quantify predictive uncertainty. 
             </p>
-            <p style="font-size: 1.1rem; line-height: 1.5; color: #34495e; margin-top: 1rem;">
+            <p style="font-size: 1rem; line-height: 1.5; color: #34495e; margin-top: 1rem; text-align: justify;">
               Experiments on four 3D point cloud datasets demonstrate that NPISeg3D achieves superior segmentation performance with fewer clicks while providing reliable uncertainty estimations.
             </p>
           </div>
@@ -152,7 +152,7 @@
             <img src="./static/images/method.jpg" class="interpolation-image" alt="Method overview" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
           </div>
           <div class="custom-content" style="background-color: #ffffff; padding: 1.2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-            <p style="font-size: 1.1rem; line-height: 1.5; color: #34495e;">
+            <p style="font-size: 1rem; line-height: 1.5; color: #34495e; text-align: justify;">
               <strong>Framework of NPISeg3D.</strong> We formulate interactive 3D segmentation as a probabilistic modeling problem with neural processes. Given a 3D scene \(S\) and a user click set \(\mathcal{C}\), a point encoder encodes them into click prototypes \(\mathbf{X}_C\) (context data) and scene features \(\mathbf{X}_T\) (target data). Then, we introduce two hierarchical latent variables: scene-level latent variable \(\mathbf{z}_s\) and object-level latent variable \(\mathbf{z}_o\), to enable probabilistic modeling and capture contextual information across hierarchical levels. In probabilistic prototype modulator, each object-specific latent variable is utilized to generate object-specific weights \((\gamma, \beta)\), which modulate its corresponding click prototypes, thereby enhancing few-shot generalization and providing reliable uncertainty estimation. The posterior distributions of the latent variables are inferred from the target set \((\mathbf{X}_T,\mathbf{Y}_T)\), which supervise the prior during training.
             </p>
           </div>
