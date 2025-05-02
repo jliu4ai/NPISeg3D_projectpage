@@ -277,22 +277,10 @@
   function moveSlide(direction) {
     if (direction === 1) {
       // When moving right
-      if (currentIndex === slides.length - 1) {
-        // If at last slide, go to first slide
-        currentIndex = 0;
-      } else {
-        // Otherwise go to next slide
-        currentIndex++;
-      }
+      currentIndex = (currentIndex + 1) % slides.length;
     } else {
       // When moving left
-      if (currentIndex === 0) {
-        // If at first slide, go to last slide
-        currentIndex = slides.length - 1;
-      } else {
-        // Otherwise go to previous slide
-        currentIndex--;
-      }
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     }
     updateSlidePosition();
     resetAutoPlay();
