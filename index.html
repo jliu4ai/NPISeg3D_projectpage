@@ -275,16 +275,7 @@
   }
 
   function moveSlide(direction) {
-    if (direction === -1) {
-      // When moving left
-      if (currentIndex === 0) {
-        // If at first slide, go to last slide
-        currentIndex = slides.length - 1;
-      } else {
-        // Otherwise go to previous slide
-        currentIndex--;
-      }
-    } else {
+    if (direction === 1) {
       // When moving right
       if (currentIndex === slides.length - 1) {
         // If at last slide, go to first slide
@@ -292,6 +283,15 @@
       } else {
         // Otherwise go to next slide
         currentIndex++;
+      }
+    } else {
+      // When moving left
+      if (currentIndex === 0) {
+        // If at first slide, go to last slide
+        currentIndex = slides.length - 1;
+      } else {
+        // Otherwise go to previous slide
+        currentIndex--;
       }
     }
     updateSlidePosition();
