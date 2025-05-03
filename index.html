@@ -58,7 +58,7 @@
   </div>
 </nav>
 
-<section class="hero is-fullheight" style="min-height: 45vh;">
+<section class="hero is-fullheight" style="min-height: 35vh;">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -107,32 +107,32 @@
   </div>
 </section>
 
-<section class="hero teaser" style="padding: 0.8rem 0;">
+<section class="hero teaser" style="padding: 0.5rem 0;">
   <div class="container is-max-desktop">
     <div class="hero-body" style="padding: 0;">
       <img src="./static/images/intro.jpg" class="interpolation-image" alt="Intro image" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);"/>
     </div>
-    <h2 class="content has-text-justified" style="margin-top: 1.2rem; font-size: 1.1rem; line-height: 1.5;">
+    <h2 class="content has-text-justified" style="margin-top: 0.8rem; font-size: 1.1rem; line-height: 1.4;">
       In this work, we propose <strong>Click Prompt learning with Optimal Transport (CPlot)</strong> for interactive segmentation. With the key component <strong>Click Prompt Optimal Transport (CPOT)</strong>, our model captures diverse user intentions, leading to more accurate mask prediction.
     </h2>
   </div>
 </section>
 
-<section class="section" id="abstract" style="padding: 0.8rem 0;">
+<section class="section" id="abstract" style="padding: 0.5rem 0;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column" style="max-width: 900px;">
         <div class="method-section" data-aos="fade-up">
           <h2 class="title is-3 has-text-centered" style="margin-bottom: 1.2rem; color: #2c3e50; font-weight: 500;">Abstract</h2>
-          <div class="custom-content" style="background-color: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-            <p style="font-size: 1rem; line-height: 1.5; color: #34495e; text-align: justify;">
+          <div class="custom-content" style="background-color: #ffffff; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+            <p style="font-size: 1rem; line-height: 1.4; color: #34495e; text-align: justify;">
               Interactive 3D segmentation has emerged as a promising solution for generating accurate object masks in complex 3D scenes by incorporating user-provided clicks. However, two critical challenges remain underexplored: (1) effectively <strong>generalizing from sparse user clicks</strong> to produce accurate segmentations and (2) <strong>quantifying predictive uncertainty</strong> to help users identify unreliable regions. 
             </p>
-            <p style="font-size: 1rem; line-height: 1.5; color: #34495e; margin-top: 1rem; text-align: justify;">
+            <p style="font-size: 1rem; line-height: 1.4; color: #34495e; margin-top: 0.8rem; text-align: justify;">
               In this work, we propose <strong>NPISeg3D, a novel probabilistic framework that builds upon Neural Processes (NPs)</strong> to address these challenges.
               Specifically, NPISeg3D introduces a hierarchical latent variable structure with scene-specific and object-specific latent variables to enhance few-shot generalization by capturing both global context and object-specific characteristics. Additionally, we design a probabilistic prototype modulator that adaptively modulates click prototypes with object-specific latent variables, improving the model's ability to capture object-aware context and quantify predictive uncertainty. 
             </p>
-            <p style="font-size: 1rem; line-height: 1.5; color: #34495e; margin-top: 1rem; text-align: justify;">
+            <p style="font-size: 1rem; line-height: 1.4; color: #34495e; margin-top: 0.8rem; text-align: justify;">
               Experiments on four 3D point cloud datasets demonstrate that NPISeg3D achieves superior segmentation performance with fewer clicks while providing reliable uncertainty estimations.
             </p>
           </div>
@@ -142,7 +142,7 @@
   </div>
 </section>
 
-<section class="section" id="method" style="padding: 0.8rem 0;">
+<section class="section" id="method" style="padding: 0.5rem 0;">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column" style="max-width: 900px;">
@@ -151,8 +151,8 @@
           <div class="content has-text-centered" style="margin-bottom: 1.2rem;">
             <img src="./static/images/method.jpg" class="interpolation-image" alt="Method overview" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
           </div>
-          <div class="custom-content" style="background-color: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-            <p style="font-size: 1rem; line-height: 1.5; color: #34495e; text-align: justify;">
+          <div class="custom-content" style="background-color: #ffffff; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+            <p style="font-size: 1rem; line-height: 1.4; color: #34495e; text-align: justify;">
               <strong>Framework of NPISeg3D.</strong> We formulate interactive 3D segmentation as a probabilistic modeling problem with neural processes. Given a 3D scene \(S\) and a user click set \(\mathcal{C}\), a point encoder encodes them into click prototypes \(\mathbf{X}_C\) (context data) and scene features \(\mathbf{X}_T\) (target data). Then, we introduce two hierarchical latent variables: scene-level latent variable \(\mathbf{z}_s\) and object-level latent variable \(\mathbf{z}_o\), to enable probabilistic modeling and capture contextual information across hierarchical levels. In probabilistic prototype modulator, each object-specific latent variable is utilized to generate object-specific weights \((\gamma, \beta)\), which modulate its corresponding click prototypes, thereby enhancing few-shot generalization and providing reliable uncertainty estimation. The posterior distributions of the latent variables are inferred from the target set \((\mathbf{X}_T,\mathbf{Y}_T)\), which supervise the prior during training.
             </p>
           </div>
@@ -162,16 +162,16 @@
   </div>
 </section>
 
-<section class="section" id="results" style="padding: 0.8rem 0;">
+<section class="section" id="results" style="padding: 0.5rem 0;">
   <div class="container is-max-desktop has-text-centered">
     <h2 class="title is-3" style="margin-bottom: 0.8rem;">Qualitative Results</h2>
-    <div class="content has-text-justified" style="margin-bottom: 0.8rem;">
+    <div class="content has-text-justified" style="margin-bottom: 0.5rem;">
       <p>
       Below we present some visualization of interactive 3D segmentation. As shown, NPISeg3D achieves <strong>strong few-shot generalization</strong>, i.e., high-quality segmentation with fewer clicks, and <strong>robust uncertainty estimation</strong> across datasets like ScanNet, S3DIS, and KITTI-360.
       </p>
     </div>
 
-    <div class="carousel-container" style="position: relative; overflow: hidden; width: 100%; max-width: 800px; margin: 0.8rem auto; height: 380px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+    <div class="carousel-container" style="position: relative; overflow: hidden; width: 100%; max-width: 800px; margin: 0.5rem auto; height: 350px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
       <div class="carousel-track" style="display: flex; transition: transform 0.5s ease-in-out; height: 100%;">
         <!-- Each slide -->
         <div class="carousel-slide" style="flex: 0 0 100%; display: flex; justify-content: center; align-items: center; height: 100%; padding: 20px;">
@@ -345,7 +345,7 @@
 <style>
   .custom-content {
     background-color: #ffffff;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   }
