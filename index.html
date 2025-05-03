@@ -34,27 +34,6 @@
     <div class="navbar-brand">
       <a class="navbar-item" href="#"><strong>NPISeg3D</strong></a>
     </div>
-    <div class="navbar-menu">
-      <div class="navbar-end">
-        <a class="navbar-item" href="#abstract">Abstract</a>
-        <a class="navbar-item" href="#method">Method</a>
-        <a class="navbar-item" href="#results">Results</a>
-        <a class="navbar-item" href="#bibtex">BibTeX</a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">Paper</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://arxiv.org/abs/2403.12345" target="_blank">
-              <span class="icon"><i class="ai ai-arxiv"></i></span>
-              <span>arXiv</span>
-            </a>
-            <a class="navbar-item" href="./static/poster.pdf" target="_blank">
-              <span class="icon"><i class="fas fa-file-pdf"></i></span>
-              <span>Poster</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </nav>
 
@@ -147,14 +126,29 @@
     <div class="columns is-centered">
       <div class="column" style="max-width: 900px;">
         <div class="method-section" data-aos="fade-up">
-          <h2 class="title is-3 has-text-centered" style="margin-bottom: 1.2rem; color: #2c3e50; font-weight: 500;">Method</h2>
-          <div class="content has-text-centered" style="margin-bottom: 1.2rem;">
+          <h2 class="title is-3 has-text-centered" style="margin-bottom: 0.8rem; color: #2c3e50; font-weight: 500;">Method</h2>
+          <div class="content has-text-centered" style="margin-bottom: 0.8rem;">
             <img src="./static/images/method.jpg" class="interpolation-image" alt="Method overview" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
           </div>
           <div class="custom-content" style="background-color: #ffffff; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
             <p style="font-size: 1rem; line-height: 1.4; color: #34495e; text-align: justify;">
               <strong>Framework of NPISeg3D.</strong> We formulate interactive 3D segmentation as a probabilistic modeling problem with neural processes. Given a 3D scene \(S\) and a user click set \(\mathcal{C}\), a point encoder encodes them into click prototypes \(\mathbf{X}_C\) (context data) and scene features \(\mathbf{X}_T\) (target data). Then, we introduce two hierarchical latent variables: scene-level latent variable \(\mathbf{z}_s\) and object-level latent variable \(\mathbf{z}_o\), to enable probabilistic modeling and capture contextual information across hierarchical levels. In probabilistic prototype modulator, each object-specific latent variable is utilized to generate object-specific weights \((\gamma, \beta)\), which modulate its corresponding click prototypes, thereby enhancing few-shot generalization and providing reliable uncertainty estimation. The posterior distributions of the latent variables are inferred from the target set \((\mathbf{X}_T,\mathbf{Y}_T)\), which supervise the prior during training.
             </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="video" style="padding: 0.5rem 0;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column" style="max-width: 900px;">
+        <div class="video-section" data-aos="fade-up">
+          <h2 class="title is-3 has-text-centered" style="margin-bottom: 0.8rem; color: #2c3e50; font-weight: 500;">Video</h2>
+          <div class="content has-text-centered">
+            <!-- Video content will be added here later -->
           </div>
         </div>
       </div>
@@ -238,7 +232,7 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-10" style="max-width: 1200px;">
-        <div class="content">
+        <div class="content has-text-centered">
           <p>This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
         </div>
       </div>
